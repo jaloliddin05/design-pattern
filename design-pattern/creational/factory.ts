@@ -52,12 +52,14 @@ testFactory(suvFactory); // Output: Driving an SUV
 /*
 Chat Gpt
 
-When explaining the Factory Design Pattern in an interview, it's important to provide a clear and concise explanation. Here's a structured way to explain the Factory Design Pattern:
+When explaining the Factory Design Pattern in an interview, it's important to provide a clear and concise explanation. Here's a structured way 
+to explain the Factory Design Pattern:
 
 1. **Definition:**
    Start by giving a brief definition of the Factory Design Pattern:
 
-   "The Factory Design Pattern is a creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created."
+   "The Factory Design Pattern is a creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter
+    the type of objects that will be created."
 
 2. **Key Components:**
    - **Product Interface/Class:**
@@ -70,7 +72,8 @@ When explaining the Factory Design Pattern in an interview, it's important to pr
      - Explain that there's a creator interface or class (e.g., `CarFactory` in the example) that declares a method (`createCar`) for creating products.
 
    - **Concrete Creators:**
-     - Mention that there are concrete creator classes (e.g., `SedanFactory` and `SUVFactory`) that implement the creator interface and provide specific implementations for creating concrete products.
+     - Mention that there are concrete creator classes (e.g., `SedanFactory` and `SUVFactory`) that implement the creator interface and provide specific
+      implementations for creating concrete products.
 
 3. **Client Code:**
    - Explain how the client code uses the factory to create objects without knowing the specific class of the created object.
@@ -85,10 +88,12 @@ When explaining the Factory Design Pattern in an interview, it's important to pr
    - Provide a simple example (e.g., creating different types of cars) to illustrate how the pattern works in practice.
 
 6. **Real-World Analogy (Optional):**
-   - If applicable, you can use a real-world analogy to make the concept more relatable. For example, a smartphone manufacturing plant that produces different models based on the same assembly line.
+   - If applicable, you can use a real-world analogy to make the concept more relatable. For example, a smartphone manufacturing plant that produces
+    different models based on the same assembly line.
 
 7. **Conclude:**
    - Summarize the key points and reiterate the benefits of using the Factory Design Pattern.
 
-Remember to adapt your explanation based on the specific context of the interview and the technical level of the interviewer. Demonstrate a clear understanding of the pattern's purpose, components, and benefits.
+Remember to adapt your explanation based on the specific context of the interview and the technical level of the interviewer. Demonstrate a clear
+ understanding of the pattern's purpose, components, and benefits.
 */
