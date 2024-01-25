@@ -1,81 +1,79 @@
 // Component interface
 interface Coffee {
-    cost(): number;
-    description(): string;
+  cost(): number;
+  description(): string;
+}
+
+// Concrete Component
+class SimpleCoffee implements Coffee {
+  cost(): number {
+    return 5; // Base cost of simple coffee
   }
-  
-  // Concrete Component
-  class SimpleCoffee implements Coffee {
-    cost(): number {
-      return 5; // Base cost of simple coffee
-    }
-  
-    description(): string {
-      return "Simple Coffee";
-    }
+
+  description(): string {
+    return "Simple Coffee";
   }
-  
-  // Decorator abstract class
-  abstract class CoffeeDecorator implements Coffee {
-    protected coffee: Coffee;
-  
-    constructor(coffee: Coffee) {
-      this.coffee = coffee;
-    }
-  
-    cost(): number {
-      return this.coffee.cost();
-    }
-  
-    description(): string {
-      return this.coffee.description();
-    }
+}
+
+// Decorator abstract class
+abstract class CoffeeDecorator implements Coffee {
+  protected coffee: Coffee;
+
+  constructor(coffee: Coffee) {
+    this.coffee = coffee;
   }
-  
-  // Concrete Decorator 1
-  class MilkDecorator extends CoffeeDecorator {
-    cost(): number {
-      return this.coffee.cost() + 2; // Additional cost for milk
-    }
-  
-    description(): string {
-      return this.coffee.description() + ", with Milk";
-    }
+
+  cost(): number {
+    return this.coffee.cost();
   }
-  
-  // Concrete Decorator 2
-  class SugarDecorator extends CoffeeDecorator {
-    cost(): number {
-      return this.coffee.cost() + 1; // Additional cost for sugar
-    }
-  
-    description(): string {
-      return this.coffee.description() + ", with Sugar";
-    }
+
+  description(): string {
+    return this.coffee.description();
   }
-  
-  // Example Usage
-  let myCoffee: Coffee = new SimpleCoffee();
-  
-  console.log(
-    `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
-  );
-  
-  // Add milk to the coffee
-  myCoffee = new MilkDecorator(myCoffee);
-  console.log(
-    `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
-  );
-  
-  // Add sugar to the coffee
-  myCoffee = new SugarDecorator(myCoffee);
-  console.log(
-    `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
-  );
-  
-  
-  
-  /*
+}
+
+// Concrete Decorator 1
+class MilkDecorator extends CoffeeDecorator {
+  cost(): number {
+    return this.coffee.cost() + 2; // Additional cost for milk
+  }
+
+  description(): string {
+    return this.coffee.description() + ", with Milk";
+  }
+}
+
+// Concrete Decorator 2
+class SugarDecorator extends CoffeeDecorator {
+  cost(): number {
+    return this.coffee.cost() + 1; // Additional cost for sugar
+  }
+
+  description(): string {
+    return this.coffee.description() + ", with Sugar";
+  }
+}
+
+// Example Usage
+let myCoffee: Coffee = new SimpleCoffee();
+
+console.log(
+  `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
+);
+
+// Add milk to the coffee
+myCoffee = new MilkDecorator(myCoffee);
+console.log(
+  `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
+);
+
+// Add sugar to the coffee
+myCoffee = new SugarDecorator(myCoffee);
+console.log(
+  `Cost: $${myCoffee.cost()}, Description: ${myCoffee.description()}`
+);
+
+/*
   The Coffee interface defines the basic operations that concrete components and decorators must implement.
   The SimpleCoffee class is a concrete component representing a simple coffee.
   The CoffeeDecorator abstract class is a decorator that extends the Coffee interface and contains a reference to a Coffee object.
