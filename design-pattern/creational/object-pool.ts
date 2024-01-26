@@ -1,3 +1,9 @@
+/*
+The Object Pool Design Pattern is a creational pattern that manages a pool of reusable objects, avoiding the overhead of 
+creating and destroying objects frequently. Instead of creating new objects, the pattern reuses existing objects from the pool, 
+improving performance in scenarios where object creation is expensive.
+*/
+
 // Object to be pooled
 class Connection {
   private id: number;

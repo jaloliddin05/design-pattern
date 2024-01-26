@@ -1,3 +1,9 @@
+/*
+  The Flyweight Design Pattern is a structural pattern that focuses on optimizing memory usage or computational expenses by sharing common parts of state
+  among multiple objects. It is particularly useful when dealing with a large number of similar objects, and the pattern minimizes the memory footprint by 
+  sharing as much as possible between instances. Let's go through an example of the Flyweight Design Pattern in TypeScript.
+*/
+
 // Flyweight: Character
 class Character {
   private character: string;

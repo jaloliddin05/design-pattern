@@ -1,3 +1,9 @@
+/*
+  The Bridge Design Pattern is a structural pattern that separates abstraction from implementation, allowing both to vary independently. 
+  This pattern is useful when you want to avoid a permanent binding between an abstraction (interface or abstract class) and its implementation, 
+  enabling flexibility in designing and evolving the system. Let's go through an example of the Bridge Design Pattern in TypeScript.
+*/
+
 // Abstraction: Remote
 interface Remote {
   powerOn(): string;

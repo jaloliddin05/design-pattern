@@ -1,25 +1,31 @@
+/*
+The Adapter Design Pattern is a structural pattern that allows the interface of an existing class to be used as another interface. 
+It is often used to make existing classes work with others without modifying their source code. Let's go through an example of the 
+Adapter Design Pattern in TypeScript.
+*/
+
 class OldSystem {
-    requestData(): string {
-      return 'Data from the old system';
-    }
+  requestData(): string {
+    return "Data from the old system";
+  }
+}
+
+interface NewSystem {
+  fetchData(): string;
+}
+
+class OldSystemAdapter implements NewSystem {
+  private oldSystem: OldSystem;
+
+  constructor(oldSystem: OldSystem) {
+    this.oldSystem = oldSystem;
   }
 
-  interface NewSystem {
-    fetchData(): string;
+  fetchData(): string {
+    // Use the existing method and adapt it to the new interface
+    return this.oldSystem.requestData();
   }
-
-  class OldSystemAdapter implements NewSystem {
-    private oldSystem: OldSystem;
-  
-    constructor(oldSystem: OldSystem) {
-      this.oldSystem = oldSystem;
-    }
-  
-    fetchData(): string {
-      // Use the existing method and adapt it to the new interface
-      return this.oldSystem.requestData();
-    }
-  }
+}
 
 // Create an instance of the old system
 const oldSystem = new OldSystem();
@@ -32,8 +38,8 @@ const dataFromNewSystem = adapter.fetchData();
 
 console.log(dataFromNewSystem); // Output: Data from the old system
 
-
 /*
+
 The OldSystem class is the existing class with a method requestData().
 The NewSystem interface is the target interface that the new system expects.
 The OldSystemAdapter class is the adapter that implements the NewSystem interface and internally uses the methods of the OldSystem class

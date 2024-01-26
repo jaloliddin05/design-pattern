@@ -1,60 +1,64 @@
+/*
+The Prototype Design Pattern is a creational pattern that involves creating new objects by copying an existing object, 
+known as the prototype. This pattern allows you to create new instances without specifying their exact type or class. In TypeScript, 
+you can implement the Prototype pattern by using the clone method to create copies of an existing object.
+*/
+
 // Prototype interface
 interface Shape {
-    clone(): Shape;
-    getInfo(): string;
-  }
-  
-  // Concrete Prototype: Circle
-  class Circle implements Shape {
-    private radius: number;
-  
-    constructor(radius: number) {
-      this.radius = radius;
-    }
-  
-    clone(): Shape {
-      return new Circle(this.radius);
-    }
-  
-    getInfo(): string {
-      return `Circle with radius ${this.radius}`;
-    }
-  }
-  
-  // Concrete Prototype: Rectangle
-  class Rectangle implements Shape {
-    private width: number;
-    private height: number;
-  
-    constructor(width: number, height: number) {
-      this.width = width;
-      this.height = height;
-    }
-  
-    clone(): Shape {
-      return new Rectangle(this.width, this.height);
-    }
-  
-    getInfo(): string {
-      return `Rectangle with width ${this.width} and height ${this.height}`;
-    }
-  }
-  
-  // Client Code
-  const circlePrototype: Shape = new Circle(5);
-  const rectanglePrototype: Shape = new Rectangle(3, 4);
-  
-  // Create new shapes using the prototypes
-  const clonedCircle: Shape = circlePrototype.clone();
-  const clonedRectangle: Shape = rectanglePrototype.clone();
-  
-  // Output information about the clones
-  console.log(clonedCircle.getInfo());      // Output: Circle with radius 5
-  console.log(clonedRectangle.getInfo());   // Output: Rectangle with width 3 and height 4
+  clone(): Shape;
+  getInfo(): string;
+}
 
-  
+// Concrete Prototype: Circle
+class Circle implements Shape {
+  private radius: number;
 
-  /*
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+
+  clone(): Shape {
+    return new Circle(this.radius);
+  }
+
+  getInfo(): string {
+    return `Circle with radius ${this.radius}`;
+  }
+}
+
+// Concrete Prototype: Rectangle
+class Rectangle implements Shape {
+  private width: number;
+  private height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  clone(): Shape {
+    return new Rectangle(this.width, this.height);
+  }
+
+  getInfo(): string {
+    return `Rectangle with width ${this.width} and height ${this.height}`;
+  }
+}
+
+// Client Code
+const circlePrototype: Shape = new Circle(5);
+const rectanglePrototype: Shape = new Rectangle(3, 4);
+
+// Create new shapes using the prototypes
+const clonedCircle: Shape = circlePrototype.clone();
+const clonedRectangle: Shape = rectanglePrototype.clone();
+
+// Output information about the clones
+console.log(clonedCircle.getInfo()); // Output: Circle with radius 5
+console.log(clonedRectangle.getInfo()); // Output: Rectangle with width 3 and height 4
+
+/*
   Prototype Interface (Shape):
 
 Declares the clone method for creating copies of the object.

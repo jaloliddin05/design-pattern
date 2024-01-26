@@ -1,3 +1,8 @@
+/*
+The Facade Design Pattern is a structural pattern that provides a simplified interface to a set of interfaces in a subsystem. It encapsulates 
+a group of interfaces, making the subsystem easier to use. Let's go through an example of the Facade Design Pattern in TypeScript.
+*/
+
 // Subsystem class 1
 class SubsystemOne {
   operationOne(): string {

@@ -1,3 +1,9 @@
+/*
+The Decorator Design Pattern is a structural pattern that allows behavior to be added to an individual object, 
+either statically or dynamically, without affecting the behavior of other objects from the same class. In TypeScript, you can implement 
+the Decorator pattern using class inheritance and composition.
+*/
+
 // Component interface
 interface Coffee {
   cost(): number;

@@ -1,3 +1,9 @@
+/*
+  The Composite Design Pattern is a structural pattern that allows you to compose objects into tree structures to represent part-whole hierarchies.
+  This pattern lets clients treat individual objects and compositions of objects uniformly. Let's go through an example
+  of the Composite Design Pattern in TypeScript.
+*/
+
 // Component: FileSystemComponent
 interface FileSystemComponent {
   display(indentation: string): void;

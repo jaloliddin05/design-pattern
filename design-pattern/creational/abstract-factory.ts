@@ -1,3 +1,9 @@
+/*
+The Abstract Factory Design Pattern is another creational pattern that provides an interface for creating families 
+of related or dependent objects without specifying their concrete classes. It's useful when you need to ensure that the created objects are 
+compatible and can work together.
+*/
+
 // Abstract Product A
 interface Engine {
   start(): void;
@@ -43,7 +49,7 @@ interface AbstractCarFactory {
 // Concrete Factories
 class ElectricCarFactory implements AbstractCarFactory {
   createCar(): Car {
-      throw new Error("Method not implemented.");
+    throw new Error("Method not implemented.");
   }
   createEngine(): Engine {
     return new ElectricEngine();
@@ -85,10 +91,6 @@ assembleCar(gasCarFactory);
 // Output:
 // Gas engine started
 // Steel wheel rotating
-
-
-
-
 
 /*
 Abstract Products (Engine and Wheel):

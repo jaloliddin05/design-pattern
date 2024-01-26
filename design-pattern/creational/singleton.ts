@@ -1,45 +1,50 @@
-class Singleton {
-    // Private static instance variable to hold the single instance
-    private static instance: Singleton | null = null;
-    private age:number
-  
-    // Private constructor to prevent external instantiation
-    private constructor() {}
-  
-    // Public static method to get the singleton instance
-    static getInstance(): Singleton {
-      // If no instance exists, create one; otherwise, return the existing instance
-      if (!Singleton.instance) {
-        Singleton.instance = new Singleton();
-      }
-      return Singleton.instance;
-    }
-    get value(){
-        return this.age
-    }
+/*
+he Singleton Design Pattern ensures that a class has only one instance and provides a global point of access to that instance. 
+This pattern is useful when exactly one object is needed to coordinate actions across the system. In TypeScript, you can implement the Singleton 
+pattern by controlling the instantiation process and maintaining a reference to the single instance.
+*/
 
-    set value(age:number){
-       this.age = age
+class Singleton {
+  // Private static instance variable to hold the single instance
+  private static instance: Singleton | null = null;
+  private age: number;
+
+  // Private constructor to prevent external instantiation
+  private constructor() {}
+
+  // Public static method to get the singleton instance
+  static getInstance(): Singleton {
+    // If no instance exists, create one; otherwise, return the existing instance
+    if (!Singleton.instance) {
+      Singleton.instance = new Singleton();
     }
-  
-    // Public method of the singleton instance
-    public showMessage(): void {
-      console.log("Hello, I am a singleton instance!");
-    }
+    return Singleton.instance;
   }
-  
-  // Example Usage
-  const instance1 = Singleton.getInstance();
-  const instance2 = Singleton.getInstance();
-  
-  console.log(instance1 === instance2); // Output: true (both references point to the same instance)
-  
-  instance1.showMessage(); // Output: Hello, I am a singleton instance!
-  instance2.showMessage(); // Output: Hello, I am a singleton instance!
-  
-  instance1.value = 10
-  console.log(instance2.value);
-  
+  get value() {
+    return this.age;
+  }
+
+  set value(age: number) {
+    this.age = age;
+  }
+
+  // Public method of the singleton instance
+  public showMessage(): void {
+    console.log("Hello, I am a singleton instance!");
+  }
+}
+
+// Example Usage
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+
+console.log(instance1 === instance2); // Output: true (both references point to the same instance)
+
+instance1.showMessage(); // Output: Hello, I am a singleton instance!
+instance2.showMessage(); // Output: Hello, I am a singleton instance!
+
+instance1.value = 10;
+console.log(instance2.value);
 
 /*
   

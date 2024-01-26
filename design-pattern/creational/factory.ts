@@ -1,3 +1,9 @@
+/*
+The Factory Design Pattern is a creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to 
+alter the type of objects that will be created. It is useful when you want to delegate the responsibility of instantiating objects to its subclasses, 
+providing a way to create objects without specifying their exact class.
+*/
+
 // Product interface
 interface Car {
   drive(): void;
@@ -46,8 +52,6 @@ testFactory(sedanFactory); // Output: Driving a Sedan
 
 const suvFactory = new SUVFactory();
 testFactory(suvFactory); // Output: Driving an SUV
-
-
 
 /*
 Chat Gpt
